@@ -3,7 +3,7 @@ def const_from(mod)
 end
 
 
-当 /^对(.*)\.(.*)输入(.*)$/ do |mod, method, signs|
+当 /^对(.+)\.(.+)输入(.*)$/ do |mod, method, signs|
   signs = eval(signs)
   mod = const_from(mod)
   
@@ -19,7 +19,7 @@ end
   @result.should == result.to_i
 end
 
-假如 /^有一个(\w+)类的实例，初始化数据为(.*)$/ do |mod, signs|
+假如 /^有一个(.+)类的实例，初始化数据为(.*)$/ do |mod, signs|
   mod = const_from(mod)
   signs = eval(signs)
   if signs
